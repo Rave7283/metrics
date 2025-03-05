@@ -109,7 +109,7 @@ end
 Parse.Headers = function()
     for _, col in ipairs(Parse.ColumnContent) do
         if col.Condition() and (not Parse.Config.IsMiniMode() or col.Is_Mini) and (not Parse.Config.IsNanoMode() or col.Is_Nano) then
-            UI.TableSetupColumn(col.Header(), Column.Flags.None)
+            UI.TableSetupColumn(col.Header(), Column.Flags.None, col.Width)
         end
     end
     UI.TableHeadersRow()

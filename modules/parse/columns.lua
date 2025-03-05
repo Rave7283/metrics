@@ -9,6 +9,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() UI.Text(" ") end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Job
@@ -20,6 +21,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() UI.Text(" ") end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Name
@@ -31,28 +33,31 @@ table.insert(Parse.ColumnContent,
     Total     = function() UI.Text(" ") end,
     Is_Mini   = true,
     Is_Nano   = false,
+    Width     = 100,
 })
 
 -- Total
 table.insert(Parse.ColumnContent,
 {
     Condition = function() return true end,
-    Header    = function() return "Total" end,
-    Content   = function(playerName) Column.Damage.Total(playerName, false, true) end,
+    Header    = function() return "DMG" end,
+    Content   = function(playerName) Column.Damage.Total(playerName, false, false) end,
     Total     = function() Column.Damage.ParseTotal(true) end,
     Is_Mini   = true,
     Is_Nano   = true,
+    Width     = 60,
 })
 
 -- %Total
 table.insert(Parse.ColumnContent,
 {
     Condition = function() return true end,
-    Header    = function() return "%Total" end,
-    Content   = function(playerName) Column.Damage.Total(playerName, true, true) end,
+    Header    = function() return "% DMG" end,
+    Content   = function(playerName) Column.Damage.Total(playerName, true, false) end,
     Total     = function() UI.Text(" ") end,
     Is_Mini   = true,
     Is_Nano   = true,
+    Width     = 35,
 })
 
 -- Melee Delay
@@ -64,6 +69,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() UI.Text(" ") end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- DPS
@@ -75,6 +81,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() Column.Damage.ParseDPS(true) end,
     Is_Mini   = true,
     Is_Nano   = true,
+    Width     = 0,
 })
 
 -- Recent Accuracy
@@ -84,8 +91,9 @@ table.insert(Parse.ColumnContent,
     Header    = function() return string.format("%%A.%d", Metrics.Model.Running_Accuracy_Limit) end,
     Content   = function(playerName) Column.Acc.Recent(playerName, true) end,
     Total     = function() UI.Text(" ") end,
-    Is_Mini   = true,
-    Is_Nano   = true,
+    Is_Mini   = false,
+    Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Total Accuracy
@@ -97,6 +105,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() UI.Text(" ") end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Total Crit
@@ -108,6 +117,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() UI.Text(" ") end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Total Melee Damage
@@ -119,6 +129,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() Column.Damage.TrackableTotal(DB.Trackable.MELEE_OVERALL, true) end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Melee Accuracy
@@ -130,6 +141,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() UI.Text(" ") end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Melee Crit Rate
@@ -141,6 +153,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() UI.Text(" ") end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Total Weaponskill Damage
@@ -152,6 +165,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() Column.Damage.TrackableTotal(DB.Trackable.WEAPONSKILL, true) end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Weaponskill Average
@@ -163,6 +177,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() UI.Text(" ") end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Weaponskill Accuracy
@@ -174,6 +189,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() UI.Text(" ") end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Weaponskill TP
@@ -185,6 +201,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() UI.Text(" ") end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Total Skillchain Damage
@@ -196,6 +213,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() Column.Damage.TrackableTotal(DB.Trackable.SKILLCHAIN, true) end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Total Ranged Damage
@@ -207,6 +225,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() Column.Damage.TrackableTotal(DB.Trackable.RANGED_OVERALL, true) end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Ranged Accuracy
@@ -218,6 +237,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() UI.Text(" ") end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Ranged Crit Rate
@@ -229,6 +249,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() UI.Text(" ") end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Ranged Distance
@@ -240,6 +261,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() UI.Text(" ") end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Total Nuking Damage
@@ -251,6 +273,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() Column.Damage.TrackableTotal(DB.Trackable.SPELLS_NUKING, true) end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Total Job Ability Damage
@@ -262,6 +285,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() Column.Damage.TrackableTotal(DB.Trackable.ABILITY_DAMAGING, true) end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Total Pet Damage
@@ -273,6 +297,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() Column.Damage.TrackableTotal(DB.Trackable.PET_OVERALL, true) end,
     Is_Mini   = true,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Pet Accuracy
@@ -284,6 +309,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() UI.Text(" ") end,
     Is_Mini   = true,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Total Pet Melee Damage
@@ -295,6 +321,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() Column.Damage.TrackableTotal(DB.Trackable.PET_MELEE_OVERALL, true) end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Total Pet Ranged Damage
@@ -306,6 +333,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() Column.Damage.TrackableTotal(DB.Trackable.PET_RANGED_OVERALL, true) end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Total Pet TP Damage
@@ -317,6 +345,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() Column.Damage.TrackableTotal(DB.Trackable.PET_TP, true) end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Total Pet Healing
@@ -328,6 +357,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() Column.Damage.TrackableTotal(DB.Trackable.PET_HEALING, true) end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Total Healing
@@ -339,6 +369,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() Column.Damage.TrackableTotal(DB.Trackable.ALL_HEAL, true) end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Total Damage Taken
@@ -350,6 +381,7 @@ table.insert(Parse.ColumnContent,
     Total     = function() Column.Damage.TrackableTotal(DB.Trackable.DEF_DAMAGE_TAKEN_TOTAL, true) end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
 
 -- Deaths
@@ -361,4 +393,5 @@ table.insert(Parse.ColumnContent,
     Total     = function() Column.Damage.TrackableTotal(DB.Trackable.DEATH, true) end,
     Is_Mini   = false,
     Is_Nano   = false,
+    Width     = 0,
 })
